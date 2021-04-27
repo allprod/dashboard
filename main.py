@@ -59,7 +59,7 @@ app = FastAPI()
 # add middle ware classes
 app.add_middleware(
     CORSMiddleware, # Enable Cross Origin Resource Sharing
-    allow_origins=config('allow_origins', cast=Csv()) # enable the listed sites as origins
+    allow_origins="szi-dashboard.herokuapp.com" # enable the listed sites as origins
 )
 
 # Mount the static files application (and its folder)
