@@ -19,7 +19,7 @@ loguru==0.5.3
 MarkupSafe==1.1.1
 pipenv==2020.11.15
 pycodestyle==2.7.0
-pydantic==1.8
+pydantic==1.8.2
 pymssql==2.1.5
 python-decouple==3.4
 python-dotenv==0.15.0
