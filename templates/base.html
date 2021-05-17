@@ -120,7 +120,15 @@
         <!--Add admin dialog-->
         <dialog id="add-admin-modal">
           <form method="dialog" id="adminModal" class="border border-light p-5">
-            <p id="add-admin-title" class="h4 mb-4 text-center">Add an admin for </p>
+            <p id="add-admin-title" class="h4 mb-4 text-center">
+              Add an admin for
+            </p>
+
+            <select id="adminList-Select" class="mdb-select md-form" searchable="Search for admin here.." multiple>
+            <option value="" disabled selected>Choose web admins</option>
+          </select>
+          <label for="adminList-Select">Select one or more web admins</label>
+          <p> Or add an administrator</p>
 
             <label for="adminEmail">Admin Email address</label>
             <input

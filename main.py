@@ -155,6 +155,19 @@ async def get(request: Request):
 async def get_offline_page(request: Request):
     return templates.TemplateResponse('offline.html', {'request': request})
 
+# Endpoint that gets a list of admins
+@app.get('/admins')
+async def get_admins(db: Session = Depends(get_db)):
+    admins: List[models.WebAdmins] = db.query(models.WebAdmins).all()
+    data: List[schemas.WebAdmin] = [schemas.WebAdmin(
+        id = admin.id,
+        name = admin.name,
+        email_address = admin.email_address,
+        sites = admin.sites
+        ) for admin in admins]
+    return JSONResponse(jsonable_encoder(data))
+
+
 # An endpoint to add a website
 @app.post("/addsite")
 async def add_site(new_site: schemas.WebsitePost, db: Session = Depends(get_db)):
