@@ -54,7 +54,7 @@
       <aside id="right-sidebar" class="box">
         <!--add site diag-->
         <dialog id="add-website" class="modal-style">
-          <form method="" id="siteModal" class="border border-light p-5">
+          <form method="dialog" id="siteModal" class="border border-light p-5">
             <p>
               Add a website
               <label for="sitename"> Site Name </label>
@@ -109,8 +109,18 @@
               </button>
             </menu>
           </form>
-          <form method="" id="adminModal" class="border border-light p-5">
-            <p class="h4 mb-4 text-center">Add an admin</p>
+        </dialog>
+        <!--/add site diag-->
+        <!--Add site button-->
+        <menu>
+          <button id="addNeWebsite">Add a website</button>
+        </menu>
+        <!--/Add site button-->
+        <output aria-live="polite"></output>
+        <!--Add admin dialog-->
+        <dialog id="add-admin-modal">
+          <form method="dialog" id="adminModal" class="border border-light p-5">
+            <p id="add-admin-title" class="h4 mb-4 text-center">Add an admin for </p>
 
             <label for="adminEmail">Admin Email address</label>
             <input
@@ -133,13 +143,6 @@
             </button>
           </form>
         </dialog>
-        <!--/add site diag-->
-        <!--Add site button-->
-        <menu>
-          <button id="addNeWebsite">Add a website</button>
-        </menu>
-        <!--/Add site button-->
-        <output aria-live="polite"></output>
       </aside>
       <dialog id="edit-website"></dialog>
     </div>

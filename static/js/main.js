@@ -1,7 +1,9 @@
 let addSiteBtn = document.getElementById('addNeWebsite');
 let addSiteDialog = document.getElementById('add-website');
+let addAdminDialog = document.getElementById('add-admin-modal');
 let outputBox = document.querySelector('output');
-let saveBtn = document.getElementById('saveBtn');
+let saveBtn = document.getElementById('siteSaveBtn');
+let cancelBtn = document.getElementById('siteCancelBTN');
 let editSiteDialog = document.getElementById("edit-website");
 let siteData;
 let numAdmins= 0;
@@ -9,7 +11,6 @@ let numAdmins= 0;
 const hostname = "127.0.0.1:8000";
 var responseMessage = "";
 var requestSuccessful = false;
-
 
 // show a message
 function informUser(){
@@ -66,7 +67,6 @@ function saveWebsite(event){
   .then(response => {
     if(response.ok){
       requestSuccessful = true
-      responseMessage = "Site added succsessfully, Please add an administrator"
       showAdminForm();
     }
     else{
@@ -75,8 +75,8 @@ function saveWebsite(event){
     }
     
   })
-  .then(json => console.log(json()))
-  .catch(err => alert("Failed to add site"));
+  .then(json => console.log(json()));
+  //.catch(err => alert("Failed to add site"));
 }
 
 // Function to make a website admin
@@ -132,3 +132,7 @@ addSiteDialog.addEventListener('close', function onClose() {
 });
 // "save" button saves a website and uploads a fetch
 saveBtn.addEventListener('click', saveWebsite);
+// cancel operation
+cancelBtn.addEventListener('click', function closeModal(){
+  addSiteDialog.close();
+})
