@@ -3,7 +3,6 @@ let addSiteDialog = document.getElementById('add-website');
 let outputBox = document.querySelector('output');
 let saveBtn = document.getElementById('saveBtn');
 let editSiteDialog = document.getElementById("edit-website");
-let addAdminDialog = document.getElementById()
 let siteData;
 let numAdmins= 0;
 
@@ -108,7 +107,12 @@ function createAdmin(){
     method: "POST",
     body: JSON.stringify(admins),
     headers: {"Content-type": "application/json; charset=UTF-8"}
-  })
+  }).then(response => {
+    if (response.ok){
+      // TODO: compare response 
+      // TODO: close modal
+    }
+  });
   // stuff
   hideAdminForm();
 }

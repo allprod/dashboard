@@ -156,7 +156,7 @@ ws.onmessage = function(event) {
             break;
         case actions.UPDATE:
             // if the row exixts continue. else create it and set values
-            let thisrow = document.getElementById(site.id)
+            let thisrow = document.getElementById(content.data.id)
             if(thisrow !== "undefined"){
                 updateSite(content.data);
             }
