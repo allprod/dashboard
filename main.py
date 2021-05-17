@@ -188,7 +188,7 @@ async def add_site(new_site: schemas.WebsitePost, db: Session = Depends(get_db))
         log.error(msg, exc_info=True)       
 
 # Endpoint for site creation
-@app("/adminadd")
+@app.post("/adminadd")
 async def create_admin(new_admin: schemas.WebAdmin, db: Session = Depends(get_db)):
     admin: models.WebAdmins = models.WebAdmins(
         name = new_admin.name,
@@ -495,7 +495,6 @@ async def site_checker(website: models.Website) -> bool:
         # Make the payload and broadcast it to all users
         payload: dict = {'action' : schemas.PayloadAction.UPDATE, 'data' : item}
         await broadcast(payload)
-        log.critical(f"broadcast for payload: {payload} complete")
         success = True
     except sqlalchemy.exc.InvalidRequestError as e:
         # log the exception
