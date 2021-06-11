@@ -41,5 +41,5 @@ uvicorn==0.13.4
 virtualenv==20.4.6
 virtualenv-clone==0.5.4
 watchgod==0.7
-websockets==8.1
+websockets==9.1
 win32-setctime==1.0.3
