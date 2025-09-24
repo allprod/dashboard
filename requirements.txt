@@ -36,7 +36,7 @@ toml==0.10.2
 typing-extensions==3.7.4.3
 tzlocal==2.1
 ujson==4.0.2
-urllib3==1.26.4
+urllib3==1.26.5
 uvicorn==0.13.4
 virtualenv==20.4.6
 virtualenv-clone==0.5.4
